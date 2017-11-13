@@ -9,6 +9,9 @@ class Question(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.question_text
+
 
 class Choice(models.Model):
     class Meta:
@@ -19,3 +22,6 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.choice_text
